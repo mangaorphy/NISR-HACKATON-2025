@@ -1,0 +1,721 @@
+{
+  "metadata": {
+    "generated_at": "2025-10-07T17:56:01.169603",
+    "report_period": "Q3 2024",
+    "analysis_version": "1.0"
+  },
+  "top_opportunities": [
+    {
+      "rank": 1,
+      "commodity": "Other commodities & transactions, n.e.s",
+      "sitc_code": "9",
+      "current_value_millions": 434.78,
+      "market_share_percent": 66.5,
+      "yoy_growth_percent": 131.25,
+      "recommendation": "HIGH PRIORITY: Scale production and expand market reach"
+    },
+    {
+      "rank": 2,
+      "commodity": "Food and live animals",
+      "sitc_code": "0",
+      "current_value_millions": 86.23,
+      "market_share_percent": 13.19,
+      "yoy_growth_percent": 13.31,
+      "recommendation": "MAINTAIN: Continue current strategy with optimizations"
+    },
+    {
+      "rank": 3,
+      "commodity": "Crude materials, inedible, except fuels",
+      "sitc_code": "2",
+      "current_value_millions": 67.91,
+      "market_share_percent": 10.39,
+      "yoy_growth_percent": 23.57,
+      "recommendation": "MAINTAIN: Continue current strategy with optimizations"
+    },
+    {
+      "rank": 4,
+      "commodity": "Manufactured goods classified chiefly by material",
+      "sitc_code": "6",
+      "current_value_millions": 30.74,
+      "market_share_percent": 4.7,
+      "yoy_growth_percent": 7.45,
+      "recommendation": "MAINTAIN: Continue current strategy with optimizations"
+    },
+    {
+      "rank": 5,
+      "commodity": "Animals and vegetable oils, fats & waxes",
+      "sitc_code": "4",
+      "current_value_millions": 12.04,
+      "market_share_percent": 1.84,
+      "yoy_growth_percent": 320.05,
+      "recommendation": "HIGH PRIORITY: Scale production and expand market reach"
+    }
+  ],
+  "market_trends": {
+    "total_exports_trend": "increasing",
+    "growth_rate_avg": 9.048548636158628,
+    "seasonal_patterns": {
+      "peak_quarter": "Q3",
+      "peak_sectors": [
+        "Food and Live Animals",
+        "Agricultural Products"
+      ]
+    },
+    "volatility_index": "LOW"
+  },
+  "policy_recommendations": [
+    {
+      "priority": "HIGH",
+      "area": "Agricultural Export Enhancement",
+      "recommendation": "Strengthen Q3 production capacity for Food & Live Animals sector",
+      "rationale": "Consistent Q3 demand surge presents reliable export window",
+      "target_stakeholders": [
+        "Ministry of Agriculture",
+        "Farmer Cooperatives"
+      ],
+      "timeline": "6-12 months",
+      "expected_impact": "Increase Q3 exports by 30-40%"
+    },
+    {
+      "priority": "HIGH",
+      "area": "Market Diversification",
+      "recommendation": "Reduce dependency on top 3 markets (currently 72% concentration)",
+      "rationale": "HHI of 2365.8 indicates moderate concentration risk",
+      "target_stakeholders": [
+        "Rwanda Development Board",
+        "Export Promotion Agencies"
+      ],
+      "timeline": "12-18 months",
+      "expected_impact": "Reduce HHI below 1500, increase partner count by 20"
+    },
+    {
+      "priority": "MEDIUM",
+      "area": "Value Chain Development",
+      "recommendation": "Invest in processing and packaging infrastructure",
+      "rationale": "Enable value-added exports and extended export seasons",
+      "target_stakeholders": [
+        "SME Development Board",
+        "Private Sector"
+      ],
+      "timeline": "18-24 months",
+      "expected_impact": "25% increase in value-added exports"
+    },
+    {
+      "priority": "MEDIUM",
+      "area": "Strategic Market Entry",
+      "recommendation": "Focus on Tier 1 powerhouse markets (UAE, Ethiopia, India, China)",
+      "rationale": "Average 170% growth rate with proven market access",
+      "target_stakeholders": [
+        "Ministry of Trade",
+        "Export Promotion"
+      ],
+      "timeline": "6-12 months",
+      "expected_impact": "Capture additional $500M in exports"
+    }
+  ],
+  "youth_sme_opportunities": [
+    {
+      "sector": "Agribusiness Aggregation",
+      "opportunity": "Agricultural product aggregation and quality control services",
+      "investment_required": "Low-Medium ($5K-$50K)",
+      "skills_needed": [
+        "Business Management",
+        "Quality Control",
+        "Logistics"
+      ],
+      "potential_revenue": "High (10-20% commission on aggregated value)",
+      "market_demand": "Q3 peak demand for Food & Live Animals",
+      "support_available": "BDF financing, RDB support programs"
+    },
+    {
+      "sector": "Cold Chain & Logistics",
+      "opportunity": "Cold storage and transportation services for Q3 export surge",
+      "investment_required": "Medium-High ($50K-$200K)",
+      "skills_needed": [
+        "Logistics Management",
+        "Cold Chain Technology"
+      ],
+      "potential_revenue": "High (storage fees + transportation)",
+      "market_demand": "Critical during Q3 peak season",
+      "support_available": "Infrastructure grants, tax incentives"
+    },
+    {
+      "sector": "Value-Added Processing",
+      "opportunity": "Food processing, packaging, and quality certification",
+      "investment_required": "Medium ($20K-$100K)",
+      "skills_needed": [
+        "Food Processing",
+        "Quality Standards",
+        "Export Documentation"
+      ],
+      "potential_revenue": "Very High (30-50% value addition)",
+      "market_demand": "Year-round with Q3 peaks",
+      "support_available": "SME grants, technical training programs"
+    },
+    {
+      "sector": "Digital Export Platforms",
+      "opportunity": "Online platforms connecting farmers to export markets",
+      "investment_required": "Low ($5K-$30K)",
+      "skills_needed": [
+        "Software Development",
+        "Digital Marketing",
+        "Trade Knowledge"
+      ],
+      "potential_revenue": "Medium (transaction fees, subscriptions)",
+      "market_demand": "Growing need for market information",
+      "support_available": "ICT innovation grants, incubator programs"
+    },
+    {
+      "sector": "Export Documentation Services",
+      "opportunity": "Assist SMEs with export paperwork, compliance, and shipping",
+      "investment_required": "Very Low ($2K-$10K)",
+      "skills_needed": [
+        "Trade Compliance",
+        "Documentation",
+        "Customer Service"
+      ],
+      "potential_revenue": "Medium (per-service fees)",
+      "market_demand": "High (many SMEs lack export expertise)",
+      "support_available": "Training from Rwanda Standards Board"
+    }
+  ],
+  "predictions": {
+    "summary": {
+      "total_countries": 95,
+      "total_predicted_2025": 9257.459192425034,
+      "total_current_2022": 6050.44223,
+      "overall_growth_percent": 53.00467041109216,
+      "avg_confidence": 50.566234798659025,
+      "high_confidence_markets": 24
+    },
+    "top_forecasts": [
+      {
+        "rank": 1,
+        "country": "World",
+        "current_2022_millions": 2019.2698,
+        "predicted_2023_millions": 2290.559459651995,
+        "predicted_2024_millions": 2659.160219199024,
+        "predicted_2025_millions": 3062.7701766219107,
+        "growth_percent": 51.67711499582228,
+        "cagr_2022_2025": 14.89647015021096,
+        "confidence_score": 96.71532229248,
+        "volatility": 24.922803576404142,
+        "recommendation": "CRITICAL PRIORITY: Scale operations immediately, high-value high-growth market"
+      },
+      {
+        "rank": 2,
+        "country": "Sub-Saharan Africa",
+        "current_2022_millions": 903.0722099999999,
+        "predicted_2023_millions": 1096.5325401468726,
+        "predicted_2024_millions": 1332.1508442072372,
+        "predicted_2025_millions": 1600.5830939708103,
+        "growth_percent": 77.23755379105404,
+        "cagr_2022_2025": 21.01854183696168,
+        "confidence_score": 87.79798177044007,
+        "volatility": 30.179872324317238,
+        "recommendation": "CRITICAL PRIORITY: Scale operations immediately, high-value high-growth market"
+      },
+      {
+        "rank": 3,
+        "country": "Congo, Dem. Rep.",
+        "current_2022_millions": 768.27262,
+        "predicted_2023_millions": 931.1417942419066,
+        "predicted_2024_millions": 1155.3504503432341,
+        "predicted_2025_millions": 1412.8564978592185,
+        "growth_percent": 83.90040996895328,
+        "cagr_2022_2025": 22.516401517679306,
+        "confidence_score": 92.63224584548378,
+        "volatility": 33.24159684549513,
+        "recommendation": "CRITICAL PRIORITY: Scale operations immediately, high-value high-growth market"
+      },
+      {
+        "rank": 4,
+        "country": "East Asia & Pacific",
+        "current_2022_millions": 194.68451000000002,
+        "predicted_2023_millions": 252.3997875635905,
+        "predicted_2024_millions": 376.9218070775278,
+        "predicted_2025_millions": 535.3359987343283,
+        "growth_percent": 174.97616463391373,
+        "cagr_2022_2025": 40.097918680471636,
+        "confidence_score": 50.31464309727887,
+        "volatility": 49.74666375018763,
+        "recommendation": "MAINTAIN: Continue current strategy, stable market"
+      },
+      {
+        "rank": 5,
+        "country": "Middle East & North Africa",
+        "current_2022_millions": 612.4592,
+        "predicted_2023_millions": 592.1571743568784,
+        "predicted_2024_millions": 514.969260815531,
+        "predicted_2025_millions": 381.3105122739071,
+        "growth_percent": -37.741075279152135,
+        "cagr_2022_2025": -14.611273090066145,
+        "confidence_score": 72.03511475215849,
+        "volatility": 50.324921817397,
+        "recommendation": "MAINTAIN: Continue current strategy, stable market"
+      },
+      {
+        "rank": 6,
+        "country": "United Arab Emirates",
+        "current_2022_millions": 590.2986999999999,
+        "predicted_2023_millions": 566.747154817509,
+        "predicted_2024_millions": 483.90707975576515,
+        "predicted_2025_millions": 343.600163234747,
+        "growth_percent": -41.7921531531838,
+        "cagr_2022_2025": -16.504991825869418,
+        "confidence_score": 71.72648179282707,
+        "volatility": 51.62832869480653,
+        "recommendation": "MAINTAIN: Continue current strategy, stable market"
+      },
+      {
+        "rank": 7,
+        "country": "China",
+        "current_2022_millions": 96.75931,
+        "predicted_2023_millions": 127.08138453030551,
+        "predicted_2024_millions": 191.87791304245548,
+        "predicted_2025_millions": 270.52895226425244,
+        "growth_percent": 179.5895839524408,
+        "cagr_2022_2025": 40.877076098301735,
+        "confidence_score": 69.60224537697118,
+        "volatility": 114.28702117676184,
+        "recommendation": "GROWTH OPPORTUNITY: Develop market entry strategy, high potential"
+      },
+      {
+        "rank": 8,
+        "country": "Europe & Central Asia",
+        "current_2022_millions": 164.63699,
+        "predicted_2023_millions": 177.55676605455665,
+        "predicted_2024_millions": 210.1258100634277,
+        "predicted_2025_millions": 255.96369122248325,
+        "growth_percent": 55.47155667902046,
+        "cagr_2022_2025": 15.846695193486472,
+        "confidence_score": 59.49707620868485,
+        "volatility": 18.858803414205532,
+        "recommendation": "MAINTAIN: Continue current strategy, stable market"
+      },
+      {
+        "rank": 9,
+        "country": "South Asia",
+        "current_2022_millions": 110.27305,
+        "predicted_2023_millions": 129.90881650063602,
+        "predicted_2024_millions": 174.4911789982052,
+        "predicted_2025_millions": 228.41526935232105,
+        "growth_percent": 107.1360766318888,
+        "cagr_2022_2025": 27.47311013232807,
+        "confidence_score": 67.8920207667688,
+        "volatility": 39.66667550095678,
+        "recommendation": "GROWTH OPPORTUNITY: Develop market entry strategy, high potential"
+      },
+      {
+        "rank": 10,
+        "country": "India",
+        "current_2022_millions": 71.17792999999999,
+        "predicted_2023_millions": 89.3845020301651,
+        "predicted_2024_millions": 130.31662204068925,
+        "predicted_2025_millions": 179.3207677675182,
+        "growth_percent": 151.93310309462248,
+        "cagr_2022_2025": 36.069799647381885,
+        "confidence_score": 70.42471940759059,
+        "volatility": 104.84140142651384,
+        "recommendation": "HIGH PRIORITY: Increase investment, strong growth trajectory"
+      },
+      {
+        "rank": 11,
+        "country": "Hong Kong, China",
+        "current_2022_millions": 39.448190000000004,
+        "predicted_2023_millions": 57.33929902545651,
+        "predicted_2024_millions": 90.17727004026892,
+        "predicted_2025_millions": 133.50945962060496,
+        "growth_percent": 238.4425486203675,
+        "cagr_2022_2025": 50.13950704432033,
+        "confidence_score": 41.14472525021674,
+        "volatility": 65.58563266552866,
+        "recommendation": "MONITOR: Low confidence, collect more data before major investment"
+      },
+      {
+        "rank": 12,
+        "country": "Ethiopia(excludes Eritrea)",
+        "current_2022_millions": 36.53307,
+        "predicted_2023_millions": 49.40712750902094,
+        "predicted_2024_millions": 67.5122130124546,
+        "predicted_2025_millions": 88.47472780049247,
+        "growth_percent": 142.17709543844103,
+        "cagr_2022_2025": 34.29021074824172,
+        "confidence_score": 83.09321645766647,
+        "volatility": 86.84702988091,
+        "recommendation": "HIGH PRIORITY: Increase investment, strong growth trajectory"
+      },
+      {
+        "rank": 13,
+        "country": "United Kingdom",
+        "current_2022_millions": 46.46412,
+        "predicted_2023_millions": 53.63854499474701,
+        "predicted_2024_millions": 64.41257599193113,
+        "predicted_2025_millions": 77.95276842067369,
+        "growth_percent": 67.76981554944696,
+        "cagr_2022_2025": 18.824120652012777,
+        "confidence_score": 34.432762811142545,
+        "volatility": 15.162163399806246,
+        "recommendation": "MONITOR: Low confidence, collect more data before major investment"
+      },
+      {
+        "rank": 14,
+        "country": "Singapore",
+        "current_2022_millions": 32.71708,
+        "predicted_2023_millions": 36.93767150386384,
+        "predicted_2024_millions": 48.27986700511428,
+        "predicted_2025_millions": 63.37955465002574,
+        "growth_percent": 93.72008336326387,
+        "cagr_2022_2025": 24.65935699281443,
+        "confidence_score": 52.054555544763836,
+        "volatility": 24.336526803537737,
+        "recommendation": "MAINTAIN: Continue current strategy, stable market"
+      },
+      {
+        "rank": 15,
+        "country": "Congo, Rep.",
+        "current_2022_millions": 19.88322,
+        "predicted_2023_millions": 26.56815049806937,
+        "predicted_2024_millions": 38.33855299642437,
+        "predicted_2025_millions": 52.223040496650356,
+        "growth_percent": 162.64880887829213,
+        "cagr_2022_2025": 37.972270714733455,
+        "confidence_score": 82.20234396786074,
+        "volatility": 121.46181931915045,
+        "recommendation": "HIGH PRIORITY: Increase investment, strong growth trajectory"
+      }
+    ],
+    "high_growth_markets": [
+      {
+        "country": "Poland",
+        "predicted_2025_millions": 6.545749501534203,
+        "growth_percent": 181.40931452904064,
+        "confidence_score": 70.4289792058075
+      },
+      {
+        "country": "Greece",
+        "predicted_2025_millions": 2.4632620013776148,
+        "growth_percent": 171.75424482614378,
+        "confidence_score": 90.86736706580626
+      },
+      {
+        "country": "Congo, Rep.",
+        "predicted_2025_millions": 52.223040496650356,
+        "growth_percent": 162.64880887829213,
+        "confidence_score": 82.20234396786074
+      },
+      {
+        "country": "Burkina Faso",
+        "predicted_2025_millions": 1.8122811424268832,
+        "growth_percent": 161.5803733187383,
+        "confidence_score": 70.67275335727875
+      },
+      {
+        "country": "Cameroon",
+        "predicted_2025_millions": 0.17210235715128164,
+        "growth_percent": 160.91928009593946,
+        "confidence_score": 89.61843920695554
+      },
+      {
+        "country": "Zambia",
+        "predicted_2025_millions": 9.683108574944981,
+        "growth_percent": 155.05490809763205,
+        "confidence_score": 83.09269578894158
+      },
+      {
+        "country": "India",
+        "predicted_2025_millions": 179.3207677675182,
+        "growth_percent": 151.93310309462248,
+        "confidence_score": 70.42471940759059
+      },
+      {
+        "country": "Ethiopia(excludes Eritrea)",
+        "predicted_2025_millions": 88.47472780049247,
+        "growth_percent": 142.17709543844103,
+        "confidence_score": 83.09321645766647
+      },
+      {
+        "country": "Nigeria",
+        "predicted_2025_millions": 1.7286504288552464,
+        "growth_percent": 132.30801871408462,
+        "confidence_score": 72.81388331897627
+      },
+      {
+        "country": "Canada",
+        "predicted_2025_millions": 7.343492788079402,
+        "growth_percent": 123.83920468434792,
+        "confidence_score": 76.39474502051343
+      }
+    ],
+    "emerging_opportunities": [
+      {
+        "country": "Central African Republic",
+        "current_2022_millions": 0.59869,
+        "predicted_2025_millions": 10.51657578704112,
+        "growth_percent": 1656.5978698560389
+      },
+      {
+        "country": "Thailand",
+        "current_2022_millions": 1.75986,
+        "predicted_2025_millions": 30.396589251959085,
+        "growth_percent": 1627.2163269782304
+      },
+      {
+        "country": "Israel",
+        "current_2022_millions": 0.01185,
+        "predicted_2025_millions": 0.05647378573633177,
+        "growth_percent": 376.57203153022596
+      },
+      {
+        "country": "Qatar",
+        "current_2022_millions": 2.9514099999999996,
+        "predicted_2025_millions": 9.437076359510002,
+        "growth_percent": 219.74806480665183
+      },
+      {
+        "country": "Spain",
+        "current_2022_millions": 2.35804,
+        "predicted_2025_millions": 6.907206571482675,
+        "growth_percent": 192.92151835773248
+      },
+      {
+        "country": "Poland",
+        "current_2022_millions": 2.32606,
+        "predicted_2025_millions": 6.545749501534203,
+        "growth_percent": 181.40931452904064
+      },
+      {
+        "country": "Greece",
+        "current_2022_millions": 0.90643,
+        "predicted_2025_millions": 2.4632620013776148,
+        "growth_percent": 171.75424482614378
+      },
+      {
+        "country": "Burkina Faso",
+        "current_2022_millions": 0.6928200000000001,
+        "predicted_2025_millions": 1.8122811424268832,
+        "growth_percent": 161.5803733187383
+      },
+      {
+        "country": "Cameroon",
+        "current_2022_millions": 0.06595999999999999,
+        "predicted_2025_millions": 0.17210235715128164,
+        "growth_percent": 160.91928009593946
+      },
+      {
+        "country": "Zimbabwe",
+        "current_2022_millions": 0.28356,
+        "predicted_2025_millions": 0.726447857167912,
+        "growth_percent": 156.18841062488085
+      }
+    ],
+    "tier_classifications": {
+      "tier_a_priority": {
+        "count": 6,
+        "total_value_2025": 6396.2283045166005,
+        "countries": [
+          "World",
+          "Sub-Saharan Africa",
+          "Congo, Dem. Rep.",
+          "India",
+          "Ethiopia(excludes Eritrea)",
+          "Congo, Rep."
+        ]
+      },
+      "tier_b_growth": {
+        "count": 10,
+        "total_value_2025": 205.51816153170716,
+        "countries": [
+          "Switzerland",
+          "Thailand",
+          "Netherlands",
+          "Egypt, Arab Rep.",
+          "Belgium",
+          "Japan",
+          "Italy",
+          "Sudan",
+          "Ireland",
+          "Central African Republic"
+        ]
+      },
+      "tier_c_emerging": {
+        "count": 16,
+        "total_value_2025": 71.29107753401733,
+        "countries": [
+          "Zambia",
+          "Qatar",
+          "Finland",
+          "Canada",
+          "Spain",
+          "Poland",
+          "Korea, Rep.",
+          "Greece",
+          "Other Asia, nes",
+          "Iran, Islamic Rep.",
+          "Australia",
+          "Burkina Faso",
+          "Azerbaijan",
+          "Nigeria",
+          "Sweden",
+          "Austria"
+        ]
+      }
+    }
+  },
+  "opportunity_matrix": [
+    {
+      "commodity": "Machinery and transport equipment",
+      "sitc_code": "7",
+      "opportunity_score": 69.75653556503973,
+      "growth_rate": 127.49,
+      "volatility": 1.9015481165342285,
+      "market_share": 1.09,
+      "risk_level": "LOW",
+      "action_priority": "CRITICAL"
+    },
+    {
+      "commodity": "Animals and vegetable oils, fats & waxes",
+      "sitc_code": "4",
+      "opportunity_score": 69.3180350506201,
+      "growth_rate": 320.05,
+      "volatility": 4.113216497933006,
+      "market_share": 1.84,
+      "risk_level": "LOW",
+      "action_priority": "CRITICAL"
+    },
+    {
+      "commodity": "Other commodities & transactions, n.e.s",
+      "sitc_code": "9",
+      "opportunity_score": 59.95,
+      "growth_rate": 131.25,
+      "volatility": 100.0,
+      "market_share": 66.5,
+      "risk_level": "HIGH",
+      "action_priority": "HIGH"
+    },
+    {
+      "commodity": "Chemicals & related products, n.e.s.",
+      "sitc_code": "5",
+      "opportunity_score": 42.20986828027825,
+      "growth_rate": 30.37,
+      "volatility": 0.5437723990725005,
+      "market_share": 0.75,
+      "risk_level": "LOW",
+      "action_priority": "HIGH"
+    },
+    {
+      "commodity": "Crude materials, inedible, except fuels",
+      "sitc_code": "2",
+      "opportunity_score": 40.87795745637666,
+      "growth_rate": 23.57,
+      "volatility": 5.5568084787444505,
+      "market_share": 10.39,
+      "risk_level": "LOW",
+      "action_priority": "HIGH"
+    },
+    {
+      "commodity": "Manufactured goods classified chiefly by material",
+      "sitc_code": "6",
+      "opportunity_score": 33.35976731036199,
+      "growth_rate": 7.45,
+      "volatility": 3.4341089654600245,
+      "market_share": 4.7,
+      "risk_level": "LOW",
+      "action_priority": "MEDIUM"
+    },
+    {
+      "commodity": "Miscellaneous manufactured articles",
+      "sitc_code": "8",
+      "opportunity_score": 33.01188496574342,
+      "growth_rate": 8.1,
+      "volatility": 2.2103834475219153,
+      "market_share": 1.45,
+      "risk_level": "LOW",
+      "action_priority": "MEDIUM"
+    },
+    {
+      "commodity": "Food and live animals",
+      "sitc_code": "0",
+      "opportunity_score": 32.97308037035829,
+      "growth_rate": 13.31,
+      "volatility": 21.02639876547236,
+      "market_share": 13.19,
+      "risk_level": "LOW",
+      "action_priority": "MEDIUM"
+    },
+    
+    {
+      "commodity": "Mineral fuels, lubricants and related materials",
+      "sitc_code": "3",
+      "opportunity_score": 11.288863138115577,
+      "growth_rate": -46.48,
+      "volatility": 0.4871228729480784,
+      "market_share": 0.09,
+      "risk_level": "LOW",
+      "action_priority": "LOW"
+    }
+  ],
+  "strategic_markets": {
+    "tier1_powerhouses": [
+      {
+        "country": "Ethiopia(excludes Eritrea)",
+        "growth_rate": 240.76,
+        "value_2022_millions": 36.53,
+        "strategy": "Scale & Deepen",
+        "priority": "HIGH"
+      },
+      {
+        "country": "United Arab Emirates",
+        "growth_rate": 182.95,
+        "value_2022_millions": 590.3,
+        "strategy": "Scale & Deepen",
+        "priority": "HIGH"
+      },
+      {
+        "country": "India",
+        "growth_rate": 145.8,
+        "value_2022_millions": 71.18,
+        "strategy": "Scale & Deepen",
+        "priority": "HIGH"
+      },
+      {
+        "country": "Middle East & North Africa",
+        "growth_rate": 144.61,
+        "value_2022_millions": 612.46,
+        "strategy": "Scale & Deepen",
+        "priority": "HIGH"
+      },
+      {
+        "country": "China",
+        "growth_rate": 135.85,
+        "value_2022_millions": 96.76,
+        "strategy": "Scale & Deepen",
+        "priority": "HIGH"
+      }
+    ],
+    "tier2_emerging": [],
+    "tier3_untapped": [
+      {
+        "country": "France",
+        "growth_rate": 47.8,
+        "value_2022_millions": 4.82,
+        "strategy": "Market Entry",
+        "priority": "MEDIUM"
+      },
+      {
+        "country": "Australia",
+        "growth_rate": 46.97,
+        "value_2022_millions": 1.12,
+        "strategy": "Market Entry",
+        "priority": "MEDIUM"
+      },
+      {
+        "country": "Malaysia",
+        "growth_rate": 24.0,
+        "value_2022_millions": 6.51,
+        "strategy": "Market Entry",
+        "priority": "MEDIUM"
+      }
+    ]
+  }
+}
