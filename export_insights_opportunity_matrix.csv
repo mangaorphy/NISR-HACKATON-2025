@@ -1,0 +1,11 @@
+commodity,sitc_code,opportunity_score,growth_rate,volatility,market_share,risk_level,action_priority
+"Animals and vegetable oils, fats & waxes",4,66.03460095024718,320.05,107.65278275912233,1.84,HIGH,CRITICAL
+"Other commodities & transactions, n.e.s",9,57.92271360716991,131.25,44.47182780609412,66.5,MEDIUM,HIGH
+"Crude materials, inedible, except fuels",2,32.443619674716366,23.57,8.993482983062137,10.39,LOW,MEDIUM
+Food and live animals,0,29.773683102378488,13.31,24.73717691287014,13.19,LOW,MEDIUM
+"Chemicals & related products, n.e.s.",5,29.420953022735283,30.37,16.4638570193983,0.75,LOW,MEDIUM
+Manufactured goods classified chiefly by material,6,28.84407699192542,7.45,11.15074590108351,4.7,LOW,MEDIUM
+Miscellaneous manufactured articles,8,26.078864789615825,8.1,22.31235603408819,1.45,LOW,MEDIUM
+Machinery and transport equipment,7,25.977387113150286,127.49,74.15262198398517,1.09,MEDIUM,MEDIUM
+"Mineral fuels, lubricants and related materials",3,16.84511959398256,-46.48,78.27132590954389,0.09,MEDIUM,LOW
+Beverages and tobacco,1,0.8094858353051916,-71.34,144.92843228285466,0.01,HIGH,LOW

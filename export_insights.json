@@ -1,0 +1,348 @@
+{
+  "metadata": {
+    "generated_at": "2025-10-06T15:40:43.308354",
+    "report_period": "Q3 2024",
+    "analysis_version": "1.0"
+  },
+  "top_opportunities": [
+    {
+      "rank": 1,
+      "commodity": "Other commodities & transactions, n.e.s",
+      "sitc_code": "9",
+      "current_value_millions": 434.78,
+      "market_share_percent": 66.5,
+      "yoy_growth_percent": 131.25,
+      "recommendation": "HIGH PRIORITY: Scale production and expand market reach"
+    },
+    {
+      "rank": 2,
+      "commodity": "Food and live animals",
+      "sitc_code": "0",
+      "current_value_millions": 86.23,
+      "market_share_percent": 13.19,
+      "yoy_growth_percent": 13.31,
+      "recommendation": "MAINTAIN: Continue current strategy with optimizations"
+    },
+    {
+      "rank": 3,
+      "commodity": "Crude materials, inedible, except fuels",
+      "sitc_code": "2",
+      "current_value_millions": 67.91,
+      "market_share_percent": 10.39,
+      "yoy_growth_percent": 23.57,
+      "recommendation": "MAINTAIN: Continue current strategy with optimizations"
+    },
+    {
+      "rank": 4,
+      "commodity": "Manufactured goods classified chiefly by material",
+      "sitc_code": "6",
+      "current_value_millions": 30.74,
+      "market_share_percent": 4.7,
+      "yoy_growth_percent": 7.45,
+      "recommendation": "MAINTAIN: Continue current strategy with optimizations"
+    },
+    {
+      "rank": 5,
+      "commodity": "Animals and vegetable oils, fats & waxes",
+      "sitc_code": "4",
+      "current_value_millions": 12.04,
+      "market_share_percent": 1.84,
+      "yoy_growth_percent": 320.05,
+      "recommendation": "HIGH PRIORITY: Scale production and expand market reach"
+    }
+  ],
+  "market_trends": {
+    "total_exports_trend": "increasing",
+    "growth_rate_avg": 9.048548636158628,
+    "seasonal_patterns": {
+      "peak_quarter": "Q3",
+      "peak_sectors": [
+        "Food and Live Animals",
+        "Agricultural Products"
+      ]
+    },
+    "volatility_index": "LOW"
+  },
+  "policy_recommendations": [
+    {
+      "priority": "HIGH",
+      "area": "Agricultural Export Enhancement",
+      "recommendation": "Strengthen Q3 production capacity for Food & Live Animals sector",
+      "rationale": "Consistent Q3 demand surge presents reliable export window",
+      "target_stakeholders": [
+        "Ministry of Agriculture",
+        "Farmer Cooperatives"
+      ],
+      "timeline": "6-12 months",
+      "expected_impact": "Increase Q3 exports by 30-40%"
+    },
+    {
+      "priority": "HIGH",
+      "area": "Market Diversification",
+      "recommendation": "Reduce dependency on top 3 markets (currently 72% concentration)",
+      "rationale": "HHI of 2365.8 indicates moderate concentration risk",
+      "target_stakeholders": [
+        "Rwanda Development Board",
+        "Export Promotion Agencies"
+      ],
+      "timeline": "12-18 months",
+      "expected_impact": "Reduce HHI below 1500, increase partner count by 20"
+    },
+    {
+      "priority": "MEDIUM",
+      "area": "Value Chain Development",
+      "recommendation": "Invest in processing and packaging infrastructure",
+      "rationale": "Enable value-added exports and extended export seasons",
+      "target_stakeholders": [
+        "SME Development Board",
+        "Private Sector"
+      ],
+      "timeline": "18-24 months",
+      "expected_impact": "25% increase in value-added exports"
+    },
+    {
+      "priority": "MEDIUM",
+      "area": "Strategic Market Entry",
+      "recommendation": "Focus on Tier 1 powerhouse markets (UAE, Ethiopia, India, China)",
+      "rationale": "Average 170% growth rate with proven market access",
+      "target_stakeholders": [
+        "Ministry of Trade",
+        "Export Promotion"
+      ],
+      "timeline": "6-12 months",
+      "expected_impact": "Capture additional $500M in exports"
+    }
+  ],
+  "youth_sme_opportunities": [
+    {
+      "sector": "Agribusiness Aggregation",
+      "opportunity": "Agricultural product aggregation and quality control services",
+      "investment_required": "Low-Medium ($5K-$50K)",
+      "skills_needed": [
+        "Business Management",
+        "Quality Control",
+        "Logistics"
+      ],
+      "potential_revenue": "High (10-20% commission on aggregated value)",
+      "market_demand": "Q3 peak demand for Food & Live Animals",
+      "support_available": "BDF financing, RDB support programs"
+    },
+    {
+      "sector": "Cold Chain & Logistics",
+      "opportunity": "Cold storage and transportation services for Q3 export surge",
+      "investment_required": "Medium-High ($50K-$200K)",
+      "skills_needed": [
+        "Logistics Management",
+        "Cold Chain Technology"
+      ],
+      "potential_revenue": "High (storage fees + transportation)",
+      "market_demand": "Critical during Q3 peak season",
+      "support_available": "Infrastructure grants, tax incentives"
+    },
+    {
+      "sector": "Value-Added Processing",
+      "opportunity": "Food processing, packaging, and quality certification",
+      "investment_required": "Medium ($20K-$100K)",
+      "skills_needed": [
+        "Food Processing",
+        "Quality Standards",
+        "Export Documentation"
+      ],
+      "potential_revenue": "Very High (30-50% value addition)",
+      "market_demand": "Year-round with Q3 peaks",
+      "support_available": "SME grants, technical training programs"
+    },
+    {
+      "sector": "Digital Export Platforms",
+      "opportunity": "Online platforms connecting farmers to export markets",
+      "investment_required": "Low ($5K-$30K)",
+      "skills_needed": [
+        "Software Development",
+        "Digital Marketing",
+        "Trade Knowledge"
+      ],
+      "potential_revenue": "Medium (transaction fees, subscriptions)",
+      "market_demand": "Growing need for market information",
+      "support_available": "ICT innovation grants, incubator programs"
+    },
+    {
+      "sector": "Export Documentation Services",
+      "opportunity": "Assist SMEs with export paperwork, compliance, and shipping",
+      "investment_required": "Very Low ($2K-$10K)",
+      "skills_needed": [
+        "Trade Compliance",
+        "Documentation",
+        "Customer Service"
+      ],
+      "potential_revenue": "Medium (per-service fees)",
+      "market_demand": "High (many SMEs lack export expertise)",
+      "support_available": "Training from Rwanda Standards Board"
+    }
+  ],
+  "predictions": {},
+  "opportunity_matrix": [
+    {
+      "commodity": "Animals and vegetable oils, fats & waxes",
+      "sitc_code": "4",
+      "opportunity_score": 66.03460095024718,
+      "growth_rate": 320.05,
+      "volatility": 107.65278275912233,
+      "market_share": 1.84,
+      "risk_level": "HIGH",
+      "action_priority": "CRITICAL"
+    },
+    {
+      "commodity": "Other commodities & transactions, n.e.s",
+      "sitc_code": "9",
+      "opportunity_score": 57.92271360716991,
+      "growth_rate": 131.25,
+      "volatility": 44.47182780609412,
+      "market_share": 66.5,
+      "risk_level": "MEDIUM",
+      "action_priority": "HIGH"
+    },
+    {
+      "commodity": "Crude materials, inedible, except fuels",
+      "sitc_code": "2",
+      "opportunity_score": 32.443619674716366,
+      "growth_rate": 23.57,
+      "volatility": 8.993482983062137,
+      "market_share": 10.39,
+      "risk_level": "LOW",
+      "action_priority": "MEDIUM"
+    },
+    {
+      "commodity": "Food and live animals",
+      "sitc_code": "0",
+      "opportunity_score": 29.773683102378488,
+      "growth_rate": 13.31,
+      "volatility": 24.73717691287014,
+      "market_share": 13.19,
+      "risk_level": "LOW",
+      "action_priority": "MEDIUM"
+    },
+    {
+      "commodity": "Chemicals & related products, n.e.s.",
+      "sitc_code": "5",
+      "opportunity_score": 29.420953022735283,
+      "growth_rate": 30.37,
+      "volatility": 16.4638570193983,
+      "market_share": 0.75,
+      "risk_level": "LOW",
+      "action_priority": "MEDIUM"
+    },
+    {
+      "commodity": "Manufactured goods classified chiefly by material",
+      "sitc_code": "6",
+      "opportunity_score": 28.84407699192542,
+      "growth_rate": 7.45,
+      "volatility": 11.15074590108351,
+      "market_share": 4.7,
+      "risk_level": "LOW",
+      "action_priority": "MEDIUM"
+    },
+    {
+      "commodity": "Miscellaneous manufactured articles",
+      "sitc_code": "8",
+      "opportunity_score": 26.078864789615825,
+      "growth_rate": 8.1,
+      "volatility": 22.31235603408819,
+      "market_share": 1.45,
+      "risk_level": "LOW",
+      "action_priority": "MEDIUM"
+    },
+    {
+      "commodity": "Machinery and transport equipment",
+      "sitc_code": "7",
+      "opportunity_score": 25.977387113150286,
+      "growth_rate": 127.49,
+      "volatility": 74.15262198398517,
+      "market_share": 1.09,
+      "risk_level": "MEDIUM",
+      "action_priority": "MEDIUM"
+    },
+    {
+      "commodity": "Mineral fuels, lubricants and related materials",
+      "sitc_code": "3",
+      "opportunity_score": 16.84511959398256,
+      "growth_rate": -46.48,
+      "volatility": 78.27132590954389,
+      "market_share": 0.09,
+      "risk_level": "MEDIUM",
+      "action_priority": "LOW"
+    },
+    {
+      "commodity": "Beverages and tobacco",
+      "sitc_code": "1",
+      "opportunity_score": 0.8094858353051916,
+      "growth_rate": -71.34,
+      "volatility": 144.92843228285466,
+      "market_share": 0.01,
+      "risk_level": "HIGH",
+      "action_priority": "LOW"
+    }
+  ],
+  "strategic_markets": {
+    "tier1_powerhouses": [
+      {
+        "country": "Ethiopia(excludes Eritrea)",
+        "growth_rate": 240.76,
+        "value_2022_millions": 36.53,
+        "strategy": "Scale & Deepen",
+        "priority": "HIGH"
+      },
+      {
+        "country": "United Arab Emirates",
+        "growth_rate": 182.95,
+        "value_2022_millions": 590.3,
+        "strategy": "Scale & Deepen",
+        "priority": "HIGH"
+      },
+      {
+        "country": "India",
+        "growth_rate": 145.8,
+        "value_2022_millions": 71.18,
+        "strategy": "Scale & Deepen",
+        "priority": "HIGH"
+      },
+      {
+        "country": "Middle East & North Africa",
+        "growth_rate": 144.61,
+        "value_2022_millions": 612.46,
+        "strategy": "Scale & Deepen",
+        "priority": "HIGH"
+      },
+      {
+        "country": "China",
+        "growth_rate": 135.85,
+        "value_2022_millions": 96.76,
+        "strategy": "Scale & Deepen",
+        "priority": "HIGH"
+      }
+    ],
+    "tier2_emerging": [],
+    "tier3_untapped": [
+      {
+        "country": "France",
+        "growth_rate": 47.8,
+        "value_2022_millions": 4.82,
+        "strategy": "Market Entry",
+        "priority": "MEDIUM"
+      },
+      {
+        "country": "Australia",
+        "growth_rate": 46.97,
+        "value_2022_millions": 1.12,
+        "strategy": "Market Entry",
+        "priority": "MEDIUM"
+      },
+      {
+        "country": "Malaysia",
+        "growth_rate": 24.0,
+        "value_2022_millions": 6.51,
+        "strategy": "Market Entry",
+        "priority": "MEDIUM"
+      }
+    ]
+  }
+}
