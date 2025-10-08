@@ -57,31 +57,38 @@ The dashboard includes 6 main sections:
 ## 📊 What Gets Automatically Extracted
 
 ### 1. Top Export Opportunities
+
 - Top commodities by value and growth
 - Opportunity scores (0-100)
 - Risk assessments
 - Action priorities
 
 ### 2. Strategic Market Analysis
+
 - **Tier 1 Powerhouses**: High-growth, high-value markets (e.g., UAE, Ethiopia, India)
 - **Tier 2 Emerging**: Fast-growing medium markets
 - **Tier 3 Untapped**: New markets with potential
 
 ### 3. Policy Recommendations
+
 Generated automatically based on your data:
+
 - Agricultural export enhancement (Q3 seasonal opportunities)
 - Market diversification (reduce concentration risk)
 - Value chain development (processing infrastructure)
 - Strategic market entry (focus countries)
 
 Each recommendation includes:
+
 - Priority level (HIGH/MEDIUM/LOW)
 - Target stakeholders
 - Timeline
 - Expected impact
 
 ### 4. Youth & SME Opportunities
+
 Specific actionable opportunities:
+
 - **Agribusiness Aggregation** - Low investment ($5K-$50K)
 - **Cold Chain & Logistics** - Medium-high investment ($50K-$200K)
 - **Value-Added Processing** - Medium investment ($20K-$100K)
@@ -89,6 +96,7 @@ Specific actionable opportunities:
 - **Export Documentation Services** - Very low investment ($2K-$10K)
 
 Each opportunity includes:
+
 - Investment required
 - Skills needed
 - Revenue potential
@@ -134,17 +142,20 @@ Each opportunity includes:
 ## 💡 Key Features
 
 ### For Data Scientists
+
 - **One-click export**: Run one cell, get all insights exported
 - **Multiple formats**: JSON for web apps, CSV for Excel/analysis
 - **Structured data**: Clean, well-organized output
 
 ### For Government Experts
+
 - **Interactive visualizations**: Plotly charts with hover details
 - **Filtering capabilities**: Priority filters, sector filters
 - **Download options**: Export data to CSV for reports
 - **Mobile responsive**: Works on tablets and phones
 
 ### For Policy Makers
+
 - **Priority-based recommendations**: Focus on HIGH priority items first
 - **Clear action items**: Specific stakeholders, timelines, expected impacts
 - **Evidence-based**: All recommendations derived from data analysis
@@ -154,12 +165,14 @@ Each opportunity includes:
 ## 🎨 Dashboard Features
 
 ### Executive Summary
+
 - Key performance metrics
 - Market trend indicators
 - Top 3 opportunities at a glance
 - Quick decision-making insights
 
 ### Visualizations Include
+
 - Bar charts for rankings
 - Scatter plots for opportunity matrices
 - Pie charts for distributions
@@ -168,6 +181,7 @@ Each opportunity includes:
 - Color-coded risk levels
 
 ### Export Capabilities
+
 - Download any data table as CSV
 - Share specific insights
 - Generate reports
@@ -177,6 +191,7 @@ Each opportunity includes:
 ## 🔧 Customization
 
 ### Modify Policy Recommendations
+
 Edit `export_insights_extractor.py`, function `generate_policy_recommendations()`:
 
 ```python
@@ -192,6 +207,7 @@ def generate_policy_recommendations(self):
 ```
 
 ### Add New Dashboard Pages
+
 Edit `dashboard_app.py`, add new function:
 
 ```python
@@ -201,6 +217,7 @@ def show_your_new_page(insights):
 ```
 
 ### Change Dashboard Styling
+
 Modify the CSS in `dashboard_app.py`:
 
 ```python
@@ -216,18 +233,22 @@ st.markdown("""
 ## 📱 Deployment Options
 
 ### Option 1: Local Network (For Government Office)
+
 ```bash
 streamlit run dashboard_app.py --server.port 8501
 ```
+
 Share: `http://YOUR_IP_ADDRESS:8501`
 
 ### Option 2: Streamlit Cloud (Free Hosting)
+
 1. Push code to GitHub
 2. Go to https://share.streamlit.io
 3. Connect your repository
 4. Deploy!
 
 ### Option 3: Internal Server
+
 Deploy on your organization's server using Docker:
 
 ```dockerfile
@@ -246,15 +267,19 @@ CMD ["streamlit", "run", "dashboard_app.py"]
 ### Common Issues
 
 **1. "Insights file not found"**
+
 - Solution: Run the notebook cell that exports insights first
 
 **2. "Module not found: streamlit"**
+
 - Solution: `pip install streamlit plotly`
 
 **3. "Port already in use"**
+
 - Solution: `streamlit run dashboard_app.py --server.port 8502`
 
 **4. Empty data in dashboard**
+
 - Solution: Ensure all notebook cells ran successfully before exporting
 
 ---
@@ -262,6 +287,7 @@ CMD ["streamlit", "run", "dashboard_app.py"]
 ## 🎯 Success Metrics
 
 The dashboard helps track:
+
 - ✅ Number of high-priority opportunities identified
 - ✅ Strategic markets for expansion
 - ✅ Youth/SME engagement potential
@@ -297,6 +323,7 @@ This project is created for the NISR Hackathon 2025 and is intended for governme
 ---
 
 **Questions?** Check the inline documentation in:
+
 - `export_insights_extractor.py` - Extraction logic
 - `dashboard_app.py` - Dashboard components
 - `import_export.ipynb` - Analysis workflow
