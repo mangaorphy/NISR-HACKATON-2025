@@ -253,7 +253,7 @@ class ExportInsightsExtractor:
             return "LOW" if std_dev < 20 else "MEDIUM" if std_dev < 40 else "HIGH"
         return "UNKNOWN"
     
-    def export_to_json(self, filename='export_insights.json'):
+    def export_to_json(self, filename='data/insights/export_insights.json'):
         """Export insights to JSON file"""
         with open(filename, 'w') as f:
             json.dump(self.insights, f, indent=2)
@@ -267,40 +267,187 @@ class ExportInsightsExtractor:
         # Top opportunities
         if self.insights.get('top_opportunities'):
             pd.DataFrame(self.insights['top_opportunities']).to_csv(
-                f'{base_filename}_opportunities.csv', index=False
+                f'data/insights/{base_filename}_opportunities.csv', index=False
             )
         
         # Opportunity matrix
         if self.insights.get('opportunity_matrix'):
             pd.DataFrame(self.insights['opportunity_matrix']).to_csv(
-                f'{base_filename}_opportunity_matrix.csv', index=False
+                f'data/insights/{base_filename}_opportunity_matrix.csv', index=False
             )
         
         # Policy recommendations
         if self.insights.get('policy_recommendations'):
             pd.DataFrame(self.insights['policy_recommendations']).to_csv(
-                f'{base_filename}_policy_recommendations.csv', index=False
+                f'data/insights/{base_filename}_policy_recommendations.csv', index=False
             )
         
         # Youth/SME opportunities
         if self.insights.get('youth_sme_opportunities'):
             pd.DataFrame(self.insights['youth_sme_opportunities']).to_csv(
-                f'{base_filename}_youth_sme_opportunities.csv', index=False
+                f'data/insights/{base_filename}_youth_sme_opportunities.csv', index=False
             )
         
         # Strategic markets
         if self.insights.get('strategic_markets'):
             for tier, markets in self.insights['strategic_markets'].items():
                 pd.DataFrame(markets).to_csv(
-                    f'{base_filename}_strategic_{tier}.csv', index=False
+                    f'data/insights/{base_filename}_strategic_{tier}.csv', index=False
+                )
+        
+        # Forecast predictions
+        if self.insights.get('predictions') and self.insights['predictions'].get('top_forecasts'):
+            # Top forecasts
+            pd.DataFrame(self.insights['predictions']['top_forecasts']).to_csv(
+                f'data/insights/{base_filename}_forecast_top15.csv', index=False
+            )
+            
+            # High growth markets
+            if self.insights['predictions'].get('high_growth_markets'):
+                pd.DataFrame(self.insights['predictions']['high_growth_markets']).to_csv(
+                    f'data/insights/{base_filename}_forecast_high_growth.csv', index=False
+                )
+            
+            # Emerging opportunities
+            if self.insights['predictions'].get('emerging_opportunities'):
+                pd.DataFrame(self.insights['predictions']['emerging_opportunities']).to_csv(
+                    f'data/insights/{base_filename}_forecast_emerging.csv', index=False
                 )
         
         print(f"✅ Insights exported to multiple CSV files: {base_filename}_*.csv")
-        return f'{base_filename}_*.csv'
+        return f'data/insights/{base_filename}_*.csv'
+    
+    def extract_forecast_predictions(self, forecast_df):
+        """Extract predictive analytics and forecasts"""
+        if forecast_df is None or forecast_df.empty:
+            return
+        
+        # Overall forecast summary
+        self.insights['predictions'] = {
+            'summary': {
+                'total_countries': len(forecast_df),
+                'total_predicted_2025': float(forecast_df['predicted_2025'].sum()),
+                'total_current_2022': float(forecast_df['current_2022'].sum()),
+                'overall_growth_percent': float(((forecast_df['predicted_2025'].sum() / forecast_df['current_2022'].sum()) - 1) * 100),
+                'avg_confidence': float(forecast_df['confidence_score'].mean()),
+                'high_confidence_markets': int(len(forecast_df[forecast_df['confidence_score'] > 70]))
+            },
+            'top_forecasts': [],
+            'high_growth_markets': [],
+            'emerging_opportunities': [],
+            'tier_classifications': {}
+        }
+        
+        # Top 15 forecasted markets
+        top_15 = forecast_df.nlargest(15, 'predicted_2025')
+        self.insights['predictions']['top_forecasts'] = [
+            {
+                'rank': idx + 1,
+                'country': row['country'],
+                'current_2022_millions': float(row['current_2022']),
+                'predicted_2023_millions': float(row['predicted_2023']),
+                'predicted_2024_millions': float(row['predicted_2024']),
+                'predicted_2025_millions': float(row['predicted_2025']),
+                'growth_percent': float(row['predicted_growth_percent']),
+                'cagr_2022_2025': float(row['cagr_2022_2025']),
+                'confidence_score': float(row['confidence_score']),
+                'volatility': float(row['volatility']),
+                'recommendation': self._generate_forecast_recommendation(row)
+            }
+            for idx, (_, row) in enumerate(top_15.iterrows())
+        ]
+        
+        # High growth markets (>20% growth, >70% confidence)
+        high_growth = forecast_df[
+            (forecast_df['predicted_growth_percent'] > 20) & 
+            (forecast_df['confidence_score'] > 70)
+        ].nlargest(10, 'predicted_growth_percent')
+        
+        self.insights['predictions']['high_growth_markets'] = [
+            {
+                'country': row['country'],
+                'predicted_2025_millions': float(row['predicted_2025']),
+                'growth_percent': float(row['predicted_growth_percent']),
+                'confidence_score': float(row['confidence_score'])
+            }
+            for _, row in high_growth.iterrows()
+        ]
+        
+        # Emerging opportunities (low current, high growth)
+        emerging = forecast_df[
+            (forecast_df['current_2022'] < 10) & 
+            (forecast_df['predicted_growth_percent'] > 50)
+        ].nlargest(10, 'predicted_growth_percent')
+        
+        self.insights['predictions']['emerging_opportunities'] = [
+            {
+                'country': row['country'],
+                'current_2022_millions': float(row['current_2022']),
+                'predicted_2025_millions': float(row['predicted_2025']),
+                'growth_percent': float(row['predicted_growth_percent'])
+            }
+            for _, row in emerging.iterrows()
+        ]
+        
+        # Tier classifications
+        tier_a = forecast_df[
+            (forecast_df['predicted_2025'] > 50) &
+            (forecast_df['predicted_growth_percent'] > 20) &
+            (forecast_df['confidence_score'] > 70)
+        ]
+        
+        tier_b = forecast_df[
+            (forecast_df['predicted_2025'].between(10, 50)) &
+            (forecast_df['predicted_growth_percent'] > 40) &
+            (forecast_df['confidence_score'] > 60)
+        ]
+        
+        tier_c = forecast_df[
+            (forecast_df['predicted_2025'] < 10) &
+            (forecast_df['predicted_growth_percent'] > 80) &
+            (forecast_df['current_2022'] > 0.5)
+        ]
+        
+        self.insights['predictions']['tier_classifications'] = {
+            'tier_a_priority': {
+                'count': len(tier_a),
+                'total_value_2025': float(tier_a['predicted_2025'].sum()) if not tier_a.empty else 0,
+                'countries': tier_a['country'].tolist() if not tier_a.empty else []
+            },
+            'tier_b_growth': {
+                'count': len(tier_b),
+                'total_value_2025': float(tier_b['predicted_2025'].sum()) if not tier_b.empty else 0,
+                'countries': tier_b['country'].tolist() if not tier_b.empty else []
+            },
+            'tier_c_emerging': {
+                'count': len(tier_c),
+                'total_value_2025': float(tier_c['predicted_2025'].sum()) if not tier_c.empty else 0,
+                'countries': tier_c['country'].tolist() if not tier_c.empty else []
+            }
+        }
+        
+        return self.insights['predictions']
+    
+    def _generate_forecast_recommendation(self, row):
+        """Generate recommendation based on forecast data"""
+        growth = row['predicted_growth_percent']
+        confidence = row['confidence_score']
+        value_2025 = row['predicted_2025']
+        
+        if value_2025 > 100 and growth > 30 and confidence > 80:
+            return "CRITICAL PRIORITY: Scale operations immediately, high-value high-growth market"
+        elif value_2025 > 50 and growth > 20 and confidence > 70:
+            return "HIGH PRIORITY: Increase investment, strong growth trajectory"
+        elif growth > 50 and confidence > 60:
+            return "GROWTH OPPORTUNITY: Develop market entry strategy, high potential"
+        elif confidence < 50:
+            return "MONITOR: Low confidence, collect more data before major investment"
+        else:
+            return "MAINTAIN: Continue current strategy, stable market"
     
     def get_summary_stats(self):
         """Get quick summary statistics"""
-        return {
+        stats = {
             'total_opportunities': len(self.insights.get('top_opportunities', [])),
             'high_priority_policies': len([p for p in self.insights.get('policy_recommendations', []) if p['priority'] == 'HIGH']),
             'youth_sme_sectors': len(self.insights.get('youth_sme_opportunities', [])),
@@ -310,13 +457,25 @@ class ExportInsightsExtractor:
                 len(self.insights.get('strategic_markets', {}).get('tier3_untapped', []))
             ])
         }
+        
+        # Add predictions stats if available
+        if 'predictions' in self.insights and self.insights['predictions']:
+            stats['forecasted_countries'] = self.insights['predictions'].get('summary', {}).get('total_countries', 0)
+            stats['predicted_2025_value'] = self.insights['predictions'].get('summary', {}).get('total_predicted_2025', 0)
+        
+        return stats
 
 
 # Helper function to use in notebook
 def create_insights_export(commodities_df, opportunity_analysis, quarterly_data, 
-                          tier1_markets, tier2_markets, tier3_markets):
+                          tier1_markets, tier2_markets, tier3_markets, forecast_df=None):
     """
     One-function call to extract all insights and export them
+    
+    Parameters:
+    -----------
+    forecast_df : DataFrame, optional
+        DataFrame with predictive forecasts (from ML models)
     """
     extractor = ExportInsightsExtractor()
     
@@ -327,6 +486,11 @@ def create_insights_export(commodities_df, opportunity_analysis, quarterly_data,
     extractor.extract_strategic_markets(tier1_markets, tier2_markets, tier3_markets)
     extractor.generate_policy_recommendations()
     extractor.generate_youth_sme_opportunities()
+    
+    # Extract forecast predictions if available
+    if forecast_df is not None and not forecast_df.empty:
+        extractor.extract_forecast_predictions(forecast_df)
+        print("✅ Predictive forecasts extracted and included!")
     
     # Export in both formats
     json_file = extractor.export_to_json()
@@ -339,5 +503,9 @@ def create_insights_export(commodities_df, opportunity_analysis, quarterly_data,
     print(f"   • High Priority Policies: {summary['high_priority_policies']}")
     print(f"   • Youth/SME Sectors: {summary['youth_sme_sectors']}")
     print(f"   • Strategic Markets: {summary['strategic_markets']}")
+    
+    if 'forecasted_countries' in summary:
+        print(f"   • Forecasted Countries: {summary['forecasted_countries']}")
+        print(f"   • Predicted 2025 Value: ${summary['predicted_2025_value']:.1f}M")
     
     return extractor, json_file, csv_files

@@ -54,7 +54,7 @@ st.markdown("""
 def load_insights():
     """Load insights from JSON file"""
     try:
-        with open('export_insights.json', 'r') as f:
+        with open('data/insights/export_insights.json', 'r') as f:
             return json.load(f)
     except FileNotFoundError:
         st.error("❌ Insights file not found. Please run the analysis notebook first.")
@@ -84,16 +84,25 @@ def main():
     # Sidebar navigation
     st.sidebar.image("https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Flag_of_Rwanda.svg/320px-Flag_of_Rwanda.svg.png", width=200)
     st.sidebar.title("Navigation")
-    page = st.sidebar.radio(
-        "Select View",
-        ["📊 Executive Summary", "🎯 Top Opportunities", "🌍 Strategic Markets", 
-         "📜 Policy Recommendations", "👥 Youth & SME Opportunities", "📈 Detailed Analytics"]
-    )
+    
+    # Check if predictions are available
+    has_predictions = 'predictions' in insights and insights['predictions']
+    
+    pages = ["📊 Executive Summary", "🎯 Top Opportunities", "🌍 Strategic Markets", 
+             "📜 Policy Recommendations", "👥 Youth & SME Opportunities", "📈 Detailed Analytics"]
+    
+    if has_predictions:
+        pages.insert(3, "🔮 Predictive Forecasts")  # Add predictions page
+    
+    page = st.sidebar.radio("Select View", pages)
     
     # Display metadata
     st.sidebar.markdown("---")
     st.sidebar.markdown(f"**Report Period:** {insights['metadata']['report_period']}")
     st.sidebar.markdown(f"**Generated:** {insights['metadata']['generated_at'][:10]}")
+    
+    if has_predictions:
+        st.sidebar.success("🔮 Predictions Available!")
     
     # Page routing
     if page == "📊 Executive Summary":
@@ -102,6 +111,8 @@ def main():
         show_top_opportunities(insights)
     elif page == "🌍 Strategic Markets":
         show_strategic_markets(insights)
+    elif page == "🔮 Predictive Forecasts":
+        show_predictive_forecasts(insights)
     elif page == "📜 Policy Recommendations":
         show_policy_recommendations(insights)
     elif page == "👥 Youth & SME Opportunities":
@@ -172,7 +183,7 @@ def show_top_opportunities(insights):
     st.header("🎯 Top Export Opportunities")
     
     # Load opportunity matrix data
-    opp_df = load_csv_data('export_insights_opportunity_matrix.csv')
+    opp_df = load_csv_data('data/insights/export_insights_opportunity_matrix.csv')
     
     if opp_df is not None:
         # Opportunity score chart
@@ -223,7 +234,7 @@ def show_strategic_markets(insights):
     markets = insights['strategic_markets']
     
     # Tier tabs
-    tab1, tab2, tab3 = st.tabs(["🏆 Tier 1: Powerhouses", "🚀 Tier 2: Emerging", "💡 Tier 3: Untapped"])
+    tab1, tab2, tab3 = st.tabs(["🏆 Tier 1: Powerhouses", "Tier 2: Emerging", " Tier 3: Untapped"])
     
     with tab1:
         st.subheader("High Growth Powerhouse Markets")
@@ -278,6 +289,339 @@ def show_strategic_markets(insights):
             st.plotly_chart(fig, use_container_width=True)
             
             st.dataframe(df, use_container_width=True)
+
+
+def show_predictive_forecasts(insights):
+    """Predictive analytics and forecasts page"""
+    st.header("🔮 Predictive Forecasts: 2023-2025")
+    st.markdown("### ML-Powered Export Demand Predictions")
+    
+    predictions = insights.get('predictions', {})
+    
+    if not predictions:
+        st.warning("⚠️ No Predictive Forecasts available. Run the predictive model in the notebook first.")
+        return
+    
+    # Summary metrics
+    summary = predictions.get('summary', {})
+    
+    col1, col2, col3, col4 = st.columns(4)
+    
+    with col1:
+        st.metric(
+            "Total Countries Forecasted",
+            summary.get('total_countries', 0),
+            help="Number of partner countries with predictions"
+        )
+    
+    with col2:
+        predicted_2025 = summary.get('total_predicted_2025', 0)
+        st.metric(
+            "Predicted 2025 Exports",
+            f"${predicted_2025:.1f}M",
+            help="Total forecasted export value for 2025"
+        )
+    
+    with col3:
+        growth = summary.get('overall_growth_percent', 0)
+        st.metric(
+            "Overall Growth vs 2022",
+            f"{growth:+.1f}%",
+            delta=f"{growth:.1f}%",
+            help="Expected growth from 2022 to 2025"
+        )
+    
+    with col4:
+        confidence = summary.get('avg_confidence', 0)
+        st.metric(
+            "Avg Model Confidence",
+            f"{confidence:.1f}%",
+            help="Average prediction confidence across all countries"
+        )
+    
+    st.markdown("---")
+    
+    # Tabs for different views
+    tab1, tab2, tab3, tab4 = st.tabs([
+        "📊 Top Forecasts", 
+        "High Growth Markets", 
+        "Emerging Opportunities",
+        "Strategic Tiers"
+    ])
+    
+    with tab1:
+        st.subheader("Top 15 Forecasted Markets for 2025")
+        
+        top_forecasts = predictions.get('top_forecasts', [])
+        
+        if top_forecasts:
+            # Create visualization
+            df = pd.DataFrame(top_forecasts)
+            
+            # Bar chart: Current vs Predicted
+            fig = go.Figure()
+            
+            fig.add_trace(go.Bar(
+                name='Current 2022',
+                x=df['country'],
+                y=df['current_2022_millions'],
+                marker_color='lightblue'
+            ))
+            
+            fig.add_trace(go.Bar(
+                name='Predicted 2025',
+                x=df['country'],
+                y=df['predicted_2025_millions'],
+                marker_color='darkblue'
+            ))
+            
+            fig.update_layout(
+                title="Current (2022) vs Predicted (2025) Export Values",
+                xaxis_title="Country",
+                yaxis_title="Export Value ($ Millions)",
+                barmode='group',
+                height=500
+            )
+            
+            st.plotly_chart(fig, use_container_width=True)
+            
+            # Growth rate visualization
+            fig2 = px.bar(
+                df,
+                x='growth_percent',
+                y='country',
+                orientation='h',
+                color='confidence_score',
+                color_continuous_scale='RdYlGn',
+                title="Predicted Growth Rate by Country (2022-2025)",
+                labels={
+                    'growth_percent': 'Growth %',
+                    'country': 'Country',
+                    'confidence_score': 'Confidence'
+                }
+            )
+            fig2.update_layout(height=600)
+            st.plotly_chart(fig2, use_container_width=True)
+            
+            # Detailed table
+            st.subheader("📋 Detailed Forecast Data")
+            
+            display_df = df[[
+                'rank', 'country', 'current_2022_millions', 'predicted_2025_millions',
+                'growth_percent', 'cagr_2022_2025', 'confidence_score', 'recommendation'
+            ]].copy()
+            
+            display_df.columns = [
+                'Rank', 'Country', 'Current 2022 ($M)', 'Predicted 2025 ($M)',
+                'Growth %', 'CAGR %', 'Confidence %', 'Recommendation'
+            ]
+            
+            st.dataframe(
+                display_df.style.background_gradient(subset=['Growth %'], cmap='RdYlGn')
+                         .background_gradient(subset=['Confidence %'], cmap='Blues'),
+                use_container_width=True
+            )
+            
+            # Download button
+            csv = display_df.to_csv(index=False)
+            st.download_button(
+                label="📥 Download Top Forecasts CSV",
+                data=csv,
+                file_name="rwanda_export_forecasts_top15.csv",
+                mime="text/csv"
+            )
+        else:
+            st.info("No forecast data available")
+    
+    with tab2:
+        st.subheader("🚀 High-Confidence Growth Markets")
+        st.markdown("**Criteria:** >20% growth, >70% confidence")
+        
+        high_growth = predictions.get('high_growth_markets', [])
+        
+        if high_growth:
+            df = pd.DataFrame(high_growth)
+            
+            # Scatter plot
+            fig = px.scatter(
+                df,
+                x='growth_percent',
+                y='predicted_2025_millions',
+                size='confidence_score',
+                color='growth_percent',
+                hover_name='country',
+                color_continuous_scale='Viridis',
+                title="Growth vs Value Matrix (bubble size = confidence)",
+                labels={
+                    'growth_percent': 'Predicted Growth %',
+                    'predicted_2025_millions': 'Predicted 2025 Value ($M)',
+                    'confidence_score': 'Confidence'
+                }
+            )
+            fig.update_layout(height=500)
+            st.plotly_chart(fig, use_container_width=True)
+            
+            # Table
+            display_df = df.copy()
+            display_df.columns = ['Country', 'Predicted 2025 ($M)', 'Growth %', 'Confidence %']
+            
+            st.dataframe(
+                display_df.style.background_gradient(subset=['Growth %'], cmap='Greens'),
+                use_container_width=True
+            )
+            
+            st.success(f"✅ **{len(high_growth)} high-confidence growth markets identified**")
+            st.markdown("**Action:** Prioritize these markets for immediate investment and partnership development")
+        else:
+            st.info("No high-confidence growth markets identified")
+    
+    with tab3:
+        st.subheader(" Emerging Market Opportunities")
+        st.markdown("**Criteria:** Currently <$10M, but >50% predicted growth")
+        
+        emerging = predictions.get('emerging_opportunities', [])
+        
+        if emerging:
+            df = pd.DataFrame(emerging)
+            
+            # Visualization
+            fig = go.Figure()
+            
+            fig.add_trace(go.Scatter(
+                x=df['current_2022_millions'],
+                y=df['predicted_2025_millions'],
+                mode='markers+text',
+                marker=dict(
+                    size=df['growth_percent']/5,
+                    color=df['growth_percent'],
+                    colorscale='Plasma',
+                    showscale=True,
+                    colorbar=dict(title="Growth %")
+                ),
+                text=df['country'],
+                textposition="top center",
+                hovertemplate='<b>%{text}</b><br>Current: $%{x:.1f}M<br>Predicted: $%{y:.1f}M<extra></extra>'
+            ))
+            
+            fig.update_layout(
+                title="Emerging Markets: Current vs Predicted Values",
+                xaxis_title="Current 2022 ($M)",
+                yaxis_title="Predicted 2025 ($M)",
+                height=500
+            )
+            
+            st.plotly_chart(fig, use_container_width=True)
+            
+            # Table
+            display_df = df.copy()
+            display_df.columns = ['Country', 'Current 2022 ($M)', 'Predicted 2025 ($M)', 'Growth %']
+            
+            st.dataframe(
+                display_df.style.background_gradient(subset=['Growth %'], cmap='Oranges'),
+                use_container_width=True
+            )
+            
+            st.info(f"💡 **{len(emerging)} emerging markets** - Long-term investment opportunities")
+        else:
+            st.info("No emerging markets identified")
+    
+    with tab4:
+        st.subheader("🎯 Strategic Market Tiers (ML Classification)")
+        
+        tiers = predictions.get('tier_classifications', {})
+        
+        if tiers:
+            # Tier summary
+            col1, col2, col3 = st.columns(3)
+            
+            with col1:
+                tier_a = tiers.get('tier_a_priority', {})
+                st.markdown("### 🔴 Tier A - Priority")
+                st.metric("Markets", tier_a.get('count', 0))
+                st.metric("2025 Value", f"${tier_a.get('total_value_2025', 0):.1f}M")
+                st.caption(">$50M forecast, >20% growth, >70% confidence")
+                
+                if tier_a.get('countries'):
+                    with st.expander("View Countries"):
+                        for country in tier_a['countries']:
+                            st.write(f"• {country}")
+            
+            with col2:
+                tier_b = tiers.get('tier_b_growth', {})
+                st.markdown("### 🟡 Tier B - Growth")
+                st.metric("Markets", tier_b.get('count', 0))
+                st.metric("2025 Value", f"${tier_b.get('total_value_2025', 0):.1f}M")
+                st.caption("$10-50M forecast, >40% growth, >60% confidence")
+                
+                if tier_b.get('countries'):
+                    with st.expander("View Countries"):
+                        for country in tier_b['countries']:
+                            st.write(f"• {country}")
+            
+            with col3:
+                tier_c = tiers.get('tier_c_emerging', {})
+                st.markdown("### 🟢 Tier C - Emerging")
+                st.metric("Markets", tier_c.get('count', 0))
+                st.metric("2025 Value", f"${tier_c.get('total_value_2025', 0):.1f}M")
+                st.caption("<$10M forecast, >80% growth, >0.5M current")
+                
+                if tier_c.get('countries'):
+                    with st.expander("View Countries"):
+                        for country in tier_c['countries']:
+                            st.write(f"• {country}")
+            
+            st.markdown("---")
+            
+            # Resource allocation pie chart
+            total_value = (
+                tier_a.get('total_value_2025', 0) + 
+                tier_b.get('total_value_2025', 0) + 
+                tier_c.get('total_value_2025', 0)
+            )
+            
+            if total_value > 0:
+                fig = go.Figure(data=[go.Pie(
+                    labels=['Tier A - Priority', 'Tier B - Growth', 'Tier C - Emerging'],
+                    values=[
+                        tier_a.get('total_value_2025', 0),
+                        tier_b.get('total_value_2025', 0),
+                        tier_c.get('total_value_2025', 0)
+                    ],
+                    marker_colors=['#DC2626', '#F59E0B', '#10B981'],
+                    hole=0.4
+                )])
+                
+                fig.update_layout(
+                    title="Recommended Resource Allocation by Tier (2025 Value)",
+                    height=400
+                )
+                
+                st.plotly_chart(fig, use_container_width=True)
+            
+            # Strategic recommendations
+            st.subheader("📋 Strategic Action Plan")
+            
+            st.markdown("""
+            **🔴 Tier A - Immediate Actions (Next 6 months):**
+            - Focus 60% of export resources on these markets
+            - Establish direct partnerships and distribution networks
+            - Increase inventory and production capacity
+            - Launch targeted marketing campaigns
+            
+            **🟡 Tier B - Medium-term Strategy (6-18 months):**
+            - Develop comprehensive market entry strategies
+            - Build local partnerships and presence
+            - Invest in market research and feasibility studies
+            - Participate in trade missions and exhibitions
+            
+            **🟢 Tier C - Long-term Investment (18+ months):**
+            - Monitor market developments quarterly
+            - Establish initial contact with distributors
+            - Conduct detailed feasibility assessments
+            - Prepare for future market entry when conditions improve
+            """)
+        else:
+            st.info("No tier classifications available")
 
 
 def show_policy_recommendations(insights):
@@ -397,8 +741,8 @@ def show_detailed_analytics(insights):
     st.header("📈 Detailed Analytics")
     
     # Load all CSV files
-    opportunities_df = load_csv_data('export_insights_opportunities.csv')
-    matrix_df = load_csv_data('export_insights_opportunity_matrix.csv')
+    opportunities_df = load_csv_data('data/insights/export_insights_opportunities.csv')
+    matrix_df = load_csv_data('data/insights/export_insights_opportunity_matrix.csv')
     
     if opportunities_df is not None:
         st.subheader("📦 Current Export Commodities")

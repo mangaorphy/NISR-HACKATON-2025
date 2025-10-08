@@ -1,0 +1,11 @@
+commodity,sitc_code,opportunity_score,growth_rate,volatility,market_share,risk_level,action_priority
+Machinery and transport equipment,7,69.75653556503973,127.49,1.9015481165342285,1.09,LOW,CRITICAL
+"Animals and vegetable oils, fats & waxes",4,69.3180350506201,320.05,4.113216497933006,1.84,LOW,CRITICAL
+"Other commodities & transactions, n.e.s",9,59.95,131.25,100.0,66.5,HIGH,HIGH
+"Chemicals & related products, n.e.s.",5,42.20986828027825,30.37,0.5437723990725005,0.75,LOW,HIGH
+"Crude materials, inedible, except fuels",2,40.87795745637666,23.57,5.5568084787444505,10.39,LOW,HIGH
+Manufactured goods classified chiefly by material,6,33.35976731036199,7.45,3.4341089654600245,4.7,LOW,MEDIUM
+Miscellaneous manufactured articles,8,33.01188496574342,8.1,2.2103834475219153,1.45,LOW,MEDIUM
+Food and live animals,0,32.97308037035829,13.31,21.02639876547236,13.19,LOW,MEDIUM
+,Source: NISR,30.0,0.0,0.0,0.0,LOW,MEDIUM
+"Mineral fuels, lubricants and related materials",3,11.288863138115577,-46.48,0.4871228729480784,0.09,LOW,LOW
