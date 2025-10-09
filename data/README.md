@@ -1,4 +1,4 @@
-# 📊 Data Directory Structure
+# Data Directory Structure
 
 ## Overview
 This directory contains all data files used in the Rwanda Export Strategy Dashboard project.
@@ -70,19 +70,13 @@ Raw Data → Processing → Analysis → Insights → Dashboard
 - **Insights files**: `export_insights_category.csv`
 - **Processed files**: `description_analysis_ready.csv`
 
-## 🔐 Data Integrity
-
-- Original raw files are preserved in `/raw/`
-- A backup is created before any organization: `/backup_before_organization/`
-- All transformations are logged in notebook cells
-
 ## 📊 Data Sources
 
 1. **NISR (National Institute of Statistics Rwanda)** - Q3 2024 data
 2. **WITS (World Bank)** - Historical data 2018-2022
 3. **Generated** - Insights from ML models and analysis
 
-## 🚀 Usage
+## Usage
 
 To use these files in the notebook or dashboard:
 ```python
