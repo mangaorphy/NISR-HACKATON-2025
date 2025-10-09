@@ -306,7 +306,7 @@ features = {
 - **NISR**: Data provision and validation
 - **Rwanda Development Board**: Export promotion support
 - **Private Sector Federation**: SME engagement
-- **Ministry of Trade**: Policy implementation
+- **Ministry of Trade and Industry**: Policy implementation
 - **Development Partners**: Technical and financial support
 
 ### Collaboration Framework:
@@ -334,4 +334,4 @@ features = {
 
 ---
 
-_This project is developed by Orpheus Manga and Antony Wahome Wambugu for the NISR Rwanda Hackathon 2025, focusing on data-driven export growth opportunities identification and strategic policy recommendations._
+_This project is developed for the NISR Rwanda Hackathon 2025, focusing on data-driven export growth opportunities identification and strategic policy recommendations._

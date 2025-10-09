@@ -1,11 +1,11 @@
-# 🚀 How to Run the Dashboard
+# How to Run the Dashboard
 
 ## Quick Start
 
 ### Step 1: Install Streamlit (First Time Only)
 
 ```bash
-cd /Users/cococe/Desktop/NISR-HACKATHON
+cd /yourpath/NISR-HACKATHON
 pip3 install streamlit plotly
 ```
 
@@ -47,9 +47,6 @@ If it doesn't open automatically, copy the URL from the terminal and paste it in
 - 📱 Responsive design
 
 ## 🔮 Adding Predictions to Dashboard
-
-**Currently**: Basic insights available  
-**To add predictions**: Follow these steps
 
 ### 1. Run Forecast Cells in Notebook
 
@@ -101,33 +98,10 @@ pip3 install -r requirements.txt
 streamlit run dashboard_app.py --server.port 8502
 ```
 
-## ⚡ Pro Tips
-
-### 1. Development Mode
-For auto-reload on file changes:
-```bash
-streamlit run dashboard_app.py --server.runOnSave true
-```
-
-### 2. Share with Others on Network
-```bash
-streamlit run dashboard_app.py --server.address 0.0.0.0
-```
-Then share: `http://YOUR_IP:8501`
-
-### 3. Different Browser
-```bash
-streamlit run dashboard_app.py --browser.serverAddress localhost
-```
-
-### 4. Stop the Dashboard
-Press `Ctrl + C` in the terminal
-
-## 📋 Complete Workflow
-
+## Full Commands Summary
 ```bash
 # 1. Navigate to project
-cd /Users/cococe/Desktop/NISR-HACKATHON
+cd /yourpath/NISR-HACKATHON
 
 # 2. Install dependencies (first time only)
 pip3 install streamlit plotly pandas numpy
@@ -139,78 +113,5 @@ streamlit run dashboard_app.py
 # Automatic: Dashboard opens in default browser
 # Manual: Go to http://localhost:8501
 ```
-
-## 🎯 Expected Output
-
-When you run the dashboard, you should see:
-
-```
-  You can now view your Streamlit app in your browser.
-
-  Local URL: http://localhost:8501
-  Network URL: http://192.168.x.x:8501
-```
-
-## 📸 What the Dashboard Shows
-
-### Without Predictions (Current State)
-- Executive Summary
-- Top Export Opportunities
-- Strategic Markets (Tier 1, 2, 3)
-- Policy Recommendations
-- Youth & SME Opportunities
-- Detailed Analytics
-
-### With Predictions (After Running Forecast Cells)
-- **All above pages PLUS:**
-- 🔮 Predictive Forecasts page with:
-  - Top 15 forecasted markets for 2025
-  - High-confidence growth opportunities
-  - Emerging market analysis
-  - Strategic tier classifications (A/B/C)
-
-## 🔄 Update Dashboard Data
-
-To refresh data in the dashboard:
-
-1. **Update notebook analysis** (run analysis cells)
-2. **Run export cell** (Cell 36 in notebook)
-3. **Refresh dashboard** (Click "Rerun" or press 'R' in browser)
-
-## 📞 Need Help?
-
-### Check these files:
-- `DASHBOARD_SETUP_GUIDE.md` - Detailed setup instructions
-- `ADD_PREDICTIONS_TO_DASHBOARD.md` - How to add ML predictions
-- `PREDICTIVE_DASHBOARD_GUIDE.md` - Predictions user guide
-
-### Common Commands:
-```bash
-# Check if streamlit is installed
-pip3 show streamlit
-
-# Check Python version (need 3.7+)
-python3 --version
-
-# List all installed packages
-pip3 list
-
-# Update streamlit
-pip3 install --upgrade streamlit
-```
-
----
-
-## 🎉 Ready to Launch!
-
-**Run this command now:**
-```bash
-cd /Users/cococe/Desktop/NISR-HACKATHON && streamlit run dashboard_app.py
-```
-
-Your dashboard will be accessible at: **http://localhost:8501** 🚀
-
----
-
 **Authors**: Orpheus Mhizha Manga & Antony Wambugu  
 **Project**: NISR Hackathon 2025 - Rwanda Export Strategy Dashboard
