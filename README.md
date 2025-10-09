@@ -12,6 +12,7 @@ Identify Rwanda's next big export opportunity through comprehensive analysis of 
 
 ## 📋 Table of Contents
 - [Project Overview](#-project-overview)
+- [Dashboard Preview](#-dashboard-preview)
 - [Key Results & Findings](#-key-results--findings)
 - [Model Architecture](#-model-architecture)
 - [Project Structure](#-project-structure)
@@ -43,7 +44,23 @@ This project provides a comprehensive analysis of Rwanda's export opportunities 
 
 ---
 
-## Key Results & Findings
+## 📊 Dashboard Preview
+
+![Rwanda Export Strategy Dashboard](images/dashboard_screenshot.png)
+
+**Live Interactive Dashboard** showcasing:
+- 🇷🇼 **Executive Summary** with key metrics and market trends
+- 🏆 **Top 3 Export Opportunities** - Machinery & transport equipment leading with 127.5% growth
+- 📈 **Market Trends Overview** - Overall trend: INCREASING, Peak Quarter: Q3, Average Growth: 9.0%
+- 📊 **Strategic Market Analysis** - 5 identified opportunities across Tier 1 powerhouse markets
+- 📜 **Government-Ready Policies** - 3 high priority recommendations
+- 👥 **Youth & SME Sectors** - 5 targeted opportunity areas
+
+> **Access Dashboard**: Run `streamlit run dashboard_app.py` to explore the full interactive experience
+
+---
+
+## 📊 Key Results & Findings
 
 ### Export Opportunity Analysis
 - **Top Opportunity**: Other commodities & transactions (SITC 9)
@@ -360,9 +377,11 @@ jupyter notebook
 
 ---
 
-## Dashboard Features
+## 🎨 Dashboard Features
 
-### Page 1: Executive Summary
+> **See [Dashboard Preview](#-dashboard-preview) above for a live screenshot**
+
+### Page 1: 📊 Executive Summary
 - Key metrics overview (opportunities, policies, sectors, markets)
 - Market trends visualization
 - Top 3 export opportunities with scores
