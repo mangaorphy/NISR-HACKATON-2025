@@ -13,7 +13,7 @@ from datetime import datetime
 
 # Page configuration
 st.set_page_config(
-    page_title="Rwanda Export Strategy Dashboard",
+    page_title="Rwanda Export Strategy",
     page_icon="🇷🇼",
     layout="wide",
     initial_sidebar_state="expanded"
