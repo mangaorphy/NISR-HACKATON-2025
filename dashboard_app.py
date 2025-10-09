@@ -643,17 +643,81 @@ def show_policy_recommendations(insights):
     for idx, policy in enumerate(filtered_policies, 1):
         priority_class = f"priority-{policy['priority'].lower()}"
         
-        with st.expander(f"{'🔴' if policy['priority']=='HIGH' else '🟡' if policy['priority']=='MEDIUM' else '🟢'} {policy['area']}", expanded=policy['priority']=='HIGH'):
-            st.markdown(f"**Priority:** <span class='{priority_class}'>{policy['priority']}</span>", unsafe_allow_html=True)
-            st.markdown(f"**Recommendation:** {policy['recommendation']}")
-            st.markdown(f"**Rationale:** {policy['rationale']}")
+        # Get the title - support both old and new format
+        policy_title = policy.get('policy_title', policy.get('category', policy.get('area', 'Policy')))
+        
+        # Priority emoji
+        priority_emoji = '🔴' if policy['priority'] in ['CRITICAL', 'HIGH'] else '🟡' if policy['priority']=='MEDIUM' else '🟢'
+        
+        with st.expander(f"{priority_emoji} [{policy['priority']}] {policy_title}", expanded=policy['priority'] in ['CRITICAL', 'HIGH']):
+            # Category and Priority Badge
+            col_badge1, col_badge2 = st.columns([3, 1])
+            with col_badge1:
+                st.markdown(f"**Category:** {policy.get('category', policy.get('area', 'N/A'))}")
+            with col_badge2:
+                st.markdown(f"<span class='{priority_class}' style='padding: 4px 12px; border-radius: 4px;'>{policy['priority']}</span>", unsafe_allow_html=True)
             
+            st.markdown("---")
+            
+            # Main recommendation
+            st.markdown("### 📋 Policy Recommendation")
+            st.markdown(policy['recommendation'])
+            
+            # Rationale and evidence
             col1, col2 = st.columns(2)
             with col1:
-                st.markdown(f"**Stakeholders:** {', '.join(policy['target_stakeholders'])}")
-                st.markdown(f"**Timeline:** {policy['timeline']}")
+                st.markdown("**📊 Rationale:**")
+                st.info(policy['rationale'])
             with col2:
-                st.markdown(f"**Expected Impact:** {policy['expected_impact']}")
+                if 'data_evidence' in policy:
+                    st.markdown("**📈 Data Evidence:**")
+                    st.success(policy['data_evidence'])
+            
+            # Implementation section
+            if 'implementation_actions' in policy:
+                st.markdown("### 🎯 Implementation Actions")
+                for action in policy['implementation_actions']:
+                    st.markdown(f"  - {action}")
+            
+            # Stakeholders
+            st.markdown("### 🤝 Key Stakeholders")
+            stakeholder_cols = st.columns(min(len(policy['target_stakeholders']), 3))
+            for idx_s, stakeholder in enumerate(policy['target_stakeholders']):
+                with stakeholder_cols[idx_s % len(stakeholder_cols)]:
+                    st.markdown(f"• {stakeholder}")
+            
+            # Budget and Timeline
+            col_budget, col_timeline = st.columns(2)
+            with col_budget:
+                if 'budget_estimate' in policy:
+                    st.markdown(f"**💰 Budget:** {policy['budget_estimate']}")
+                else:
+                    st.markdown(f"**Timeline:** {policy['timeline']}")
+            with col_timeline:
+                st.markdown(f"**⏱️ Implementation:** {policy.get('timeline', 'N/A')}")
+            
+            # Expected Impact
+            st.markdown("### 🚀 Expected Impact")
+            st.markdown(f"**{policy['expected_impact']}**")
+            
+            # Success Metrics
+            if 'success_metrics' in policy:
+                st.markdown("### 📊 Success Metrics")
+                metric_cols = st.columns(min(len(policy['success_metrics']), 2))
+                for idx_m, metric in enumerate(policy['success_metrics']):
+                    with metric_cols[idx_m % len(metric_cols)]:
+                        st.markdown(f"✓ {metric}")
+            
+            # Risks and Mitigation
+            if 'risks' in policy and 'mitigation' in policy:
+                st.markdown("---")
+                col_risk, col_mit = st.columns(2)
+                with col_risk:
+                    st.markdown("**⚠️ Risks:**")
+                    st.warning(policy['risks'])
+                with col_mit:
+                    st.markdown("**🛡️ Mitigation:**")
+                    st.success(policy['mitigation'])
     
     # Summary visualization
     st.markdown("---")
@@ -664,10 +728,11 @@ def show_policy_recommendations(insights):
         values=priority_counts.values,
         names=priority_counts.index,
         title="Policy Recommendations by Priority",
-        color_discrete_map={'HIGH': '#DC2626', 'MEDIUM': '#F59E0B', 'LOW': '#10B981'}
+        color_discrete_map={'CRITICAL': '#B91C1C', 'HIGH': '#DC2626', 'MEDIUM': '#F59E0B', 'LOW': '#10B981'}
     )
-    st.plotly_chart(fig, use_container_width=True)
-
+    st.plotly_chart(fig, width="stretch")
+    
+    
 
 def show_youth_sme_opportunities(insights):
     """Youth and SME opportunities page"""
