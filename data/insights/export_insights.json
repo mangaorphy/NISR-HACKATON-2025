@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2025-10-09T16:19:56.751388",
+    "generated_at": "2025-10-09T18:01:20.972627",
     "report_period": "Q3 2024",
     "analysis_version": "1.0"
   },
@@ -8,7 +8,7 @@
     {
       "rank": 1,
       "commodity": "Other commodities & transactions, n.e.s",
-      "sitc_code": "9",
+      "sitc_code": 9,
       "current_value_millions": 434.78,
       "market_share_percent": 66.5,
       "yoy_growth_percent": 131.25,
@@ -17,7 +17,7 @@
     {
       "rank": 2,
       "commodity": "Food and live animals",
-      "sitc_code": "0",
+      "sitc_code": 0,
       "current_value_millions": 86.23,
       "market_share_percent": 13.19,
       "yoy_growth_percent": 13.31,
@@ -26,7 +26,7 @@
     {
       "rank": 3,
       "commodity": "Crude materials, inedible, except fuels",
-      "sitc_code": "2",
+      "sitc_code": 2,
       "current_value_millions": 67.91,
       "market_share_percent": 10.39,
       "yoy_growth_percent": 23.57,
@@ -35,7 +35,7 @@
     {
       "rank": 4,
       "commodity": "Manufactured goods classified chiefly by material",
-      "sitc_code": "6",
+      "sitc_code": 6,
       "current_value_millions": 30.74,
       "market_share_percent": 4.7,
       "yoy_growth_percent": 7.45,
@@ -44,7 +44,7 @@
     {
       "rank": 5,
       "commodity": "Animals and vegetable oils, fats & waxes",
-      "sitc_code": "4",
+      "sitc_code": 4,
       "current_value_millions": 12.04,
       "market_share_percent": 1.84,
       "yoy_growth_percent": 320.05,
@@ -53,7 +53,7 @@
   ],
   "market_trends": {
     "total_exports_trend": "increasing",
-    "growth_rate_avg": 9.048548636158628,
+    "growth_rate_avg": 9.048548636158626,
     "seasonal_patterns": {
       "peak_quarter": "Q3",
       "peak_sectors": [
@@ -767,7 +767,7 @@
   "opportunity_matrix": [
     {
       "commodity": "Machinery and transport equipment",
-      "sitc_code": "7",
+      "sitc_code": 7,
       "opportunity_score": 69.75653556503973,
       "growth_rate": 127.49,
       "volatility": 1.9015481165342285,
@@ -777,7 +777,7 @@
     },
     {
       "commodity": "Animals and vegetable oils, fats & waxes",
-      "sitc_code": "4",
+      "sitc_code": 4,
       "opportunity_score": 69.3180350506201,
       "growth_rate": 320.05,
       "volatility": 4.113216497933006,
@@ -787,7 +787,7 @@
     },
     {
       "commodity": "Other commodities & transactions, n.e.s",
-      "sitc_code": "9",
+      "sitc_code": 9,
       "opportunity_score": 59.95,
       "growth_rate": 131.25,
       "volatility": 100.0,
@@ -797,7 +797,7 @@
     },
     {
       "commodity": "Chemicals & related products, n.e.s.",
-      "sitc_code": "5",
+      "sitc_code": 5,
       "opportunity_score": 42.20986828027825,
       "growth_rate": 30.37,
       "volatility": 0.5437723990725005,
@@ -807,7 +807,7 @@
     },
     {
       "commodity": "Crude materials, inedible, except fuels",
-      "sitc_code": "2",
+      "sitc_code": 2,
       "opportunity_score": 40.87795745637666,
       "growth_rate": 23.57,
       "volatility": 5.5568084787444505,
@@ -817,7 +817,7 @@
     },
     {
       "commodity": "Manufactured goods classified chiefly by material",
-      "sitc_code": "6",
+      "sitc_code": 6,
       "opportunity_score": 33.35976731036199,
       "growth_rate": 7.45,
       "volatility": 3.4341089654600245,
@@ -827,7 +827,7 @@
     },
     {
       "commodity": "Miscellaneous manufactured articles",
-      "sitc_code": "8",
+      "sitc_code": 8,
       "opportunity_score": 33.01188496574342,
       "growth_rate": 8.1,
       "volatility": 2.2103834475219153,
@@ -837,7 +837,7 @@
     },
     {
       "commodity": "Food and live animals",
-      "sitc_code": "0",
+      "sitc_code": 0,
       "opportunity_score": 32.97308037035829,
       "growth_rate": 13.31,
       "volatility": 21.02639876547236,
@@ -847,11 +847,21 @@
     },
     {
       "commodity": "Mineral fuels, lubricants and related materials",
-      "sitc_code": "3",
+      "sitc_code": 3,
       "opportunity_score": 11.288863138115577,
       "growth_rate": -46.48,
       "volatility": 0.4871228729480784,
       "market_share": 0.09,
+      "risk_level": "LOW",
+      "action_priority": "LOW"
+    },
+    {
+      "commodity": "Beverages and tobacco",
+      "sitc_code": 1,
+      "opportunity_score": 1.2397881395931414,
+      "growth_rate": -71.34,
+      "volatility": 0.7573728680228623,
+      "market_share": 0.01,
       "risk_level": "LOW",
       "action_priority": "LOW"
     }
